@@ -2,9 +2,11 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-    <a href="/articles/<%= article.id %>">
+    <a href="<%= article_path(article) %>">
       <strong>Title</strong>: <%= article.title %>
       </a>
+      <span>Another link:</span>
+      <%= link_to article.title, article %>
       <ul>
       <li>
         <strong>Created At</strong>: <%= article.created_at %>
@@ -14,3 +16,4 @@
     
   <% end %>
 </ul>
+<%= link_to "Create New Article", new_article_path %>
