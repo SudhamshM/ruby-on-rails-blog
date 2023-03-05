@@ -1,3 +1,4 @@
+<% unless comment.archived? %>
 <p>
 <strong>Commenter Name: </strong>
 <span><%= comment.commenter %></span>
@@ -6,3 +7,4 @@
 <strong>Comment: </strong>
 <span><%= comment.body %></span>
 </p>
+<% end %>
