@@ -10,27 +10,6 @@
                   } %></li>
 </ul>
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-<p>
-<strong>Commenter Name: </strong>
-<span><%= comment.commenter %></span>
-</p>
-<p>
-<strong>Comment: </strong>
-<span><%= comment.body %></span>
-</p>
-<% end %>
+<%= render @article.comments %>
 <h2>Add Comment</h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-<p>
-<%= form.label :commenter %>
-<%= form.text_field :commenter %>
-</p>
-<p>
-<%= form.label :body %>
-<%= form.text_field :body %>
-</p>
-<p>
-<%= form.submit %>
-</p>
-<% end %>
+<%= render 'comments/form' %>
