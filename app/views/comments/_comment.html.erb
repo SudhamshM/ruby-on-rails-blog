@@ -3,8 +3,16 @@
 <strong>Commenter Name: </strong>
 <span><%= comment.commenter %></span>
 </p>
+
 <p>
 <strong>Comment: </strong>
 <span><%= comment.body %></span>
 </p>
+
+<p>
+    <%= link_to "Delete Comment", [comment.article, comment], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>
 <% end %>
